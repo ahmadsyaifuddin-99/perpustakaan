@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <img class="col-md-5 profile-user-img img-responsive img-circle mb-2" src="img/logo.png">
+                                        <img class="col-md-5 profile-user-img img-responsive img-circle mb-2" src="img/Logo-Kelas-E.jpg">
                                         <h1 class="h4 text-gray-900 mb-4">SISTEM INFORMASI PERPUSTAKAAN</h1>
                                     </div>
                                     <form class="user" method="POST">

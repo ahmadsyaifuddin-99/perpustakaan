@@ -22,9 +22,7 @@ session_start();
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -39,11 +37,11 @@ session_start();
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                <div >Perpustakaan</div>
+                <div>Perpustakaan</div>
             </a>
 
             <!-- Divider -->
@@ -58,13 +56,13 @@ session_start();
                 MAIN NAVIGATION
             </div>
             <!-- Nav Item - Dashboard -->
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
             <!-- Nav Item - Data User -->
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="tbl_user.php">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Data User</span></a>
@@ -72,8 +70,7 @@ session_start();
 
             <!-- Nav Item - Data Anggota Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Data Anggota</span>
                 </a>
@@ -87,13 +84,11 @@ session_start();
 
             <!-- Nav Item - Data Buku Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Data Buku</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="tbl_buku.php">Daftar Buku</a>
                         <a class="collapse-item" href="tbl_kategori.php">Kategori Buku</a>
@@ -104,8 +99,7 @@ session_start();
 
             <!-- Nav Item - Transaksi Menu -->
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Transaksi</span>
                 </a>
@@ -128,7 +122,7 @@ session_start();
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-             <!-- Nav Item - Logout -->
+            <!-- Nav Item - Logout -->
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">
                     <i class="fas fa-fw fa-sign-out-alt"></i>
@@ -157,21 +151,19 @@ session_start();
                         <i class="fa fa-bars"></i>
                     </button>
 
-                        
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username'] ; ?></span>
-                                <img class="img-profile rounded-circle" src="img/<?php echo $_SESSION['foto'] ; ?>">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
+                                <img class="img-profile rounded-circle" src="img/<?php echo $_SESSION['foto']; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -194,12 +186,12 @@ session_start();
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
                         </div>
-                
+
                         <div class="card-body">
                             <?php
                             if (isset($_GET['message'])) {
                                 $pesan = $_GET['message'];
-                                echo '<div class="alert alert-primary" role="alert">'.$pesan.'</div>';
+                                echo '<div class="alert alert-primary" role="alert">' . $pesan . '</div>';
                             }   ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -212,28 +204,28 @@ session_start();
                                             <th>Tanggal Kembali</th>
                                             <th>Jumlah</th>
                                             <th>Status</th>
-                                            
-                                
+
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            
-                                            $sql ="SELECT * FROM pinjam_buku WHERE status='kembali'";
-                                            $result = mysqli_query($koneksi, $sql);
-                                            while ($row = mysqli_fetch_assoc($result)) { ?>
-                                        <tr>
-                                            <td><?php echo $row['id_pinjam']; ?></td>
-                                            <td><?php echo $row['nama']; ?></td>
-                                            <td><?php echo $row['nama_buku']; ?></td>
-                                            <td><?php echo $row['tanggal_pinjam']; ?></td>
-                                            <td><?php echo $row['tanggal_kembali']; ?></td>
-                                            <td><?php echo $row['jumlah_buku']; ?></td>
-                                            <td><a class="btn btn-sm btn-success"><?php echo $row['status']; ?></a></td>
-                                        </tr>
+
+                                        $sql = "SELECT * FROM pinjam_buku WHERE status='kembali'";
+                                        $result = mysqli_query($koneksi, $sql);
+                                        while ($row = mysqli_fetch_assoc($result)) { ?>
+                                            <tr>
+                                                <td><?php echo $row['id_pinjam']; ?></td>
+                                                <td><?php echo $row['nama']; ?></td>
+                                                <td><?php echo $row['nama_buku']; ?></td>
+                                                <td><?php echo $row['tanggal_pinjam']; ?></td>
+                                                <td><?php echo $row['tanggal_kembali']; ?></td>
+                                                <td><?php echo $row['jumlah_buku']; ?></td>
+                                                <td><a class="btn btn-sm btn-success"><?php echo $row['status']; ?></a></td>
+                                            </tr>
 
                                         <?php } ?>
-                                    
+
                                     </tbody>
                                 </table>
                             </div>
@@ -250,7 +242,7 @@ session_start();
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span><b>SISTEM INFORMASI PERPUSTAKAAN | SMAN 1 MANDASTANA</b></span>
+                        <span><b>SISTEM INFORMASI PERPUSTAKAAN</b></span>
                     </div>
                 </div>
             </footer>

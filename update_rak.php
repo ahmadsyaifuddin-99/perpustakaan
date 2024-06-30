@@ -153,7 +153,7 @@ $row = mysqli_fetch_assoc($result)
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <img class="col-md-1 profile-user-img img-responsive img-circle" src="img/logo.png">
+                    <img class="col-md-1 profile-user-img img-responsive img-circle" src="img/Logo-Kelas-E.jpg">
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -276,7 +276,7 @@ $row = mysqli_fetch_assoc($result)
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span><b>SISTEM INFORMASI PERPUSTAKAAN | SMAN 1 MANDASTANA</b></span>
+                        <span><b>SISTEM INFORMASI PERPUSTAKAAN</b></span>
                     </div>
                 </div>
             </footer>
