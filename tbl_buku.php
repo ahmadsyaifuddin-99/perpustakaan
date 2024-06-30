@@ -21,7 +21,9 @@ session_start();
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -69,7 +71,8 @@ session_start();
 
             <!-- Nav Item - Data Anggota Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Data Anggota</span>
                 </a>
@@ -83,11 +86,13 @@ session_start();
 
             <!-- Nav Item - Data Buku Menu -->
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Data Buku</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item active" href="tbl_buku.php">Daftar Buku</a>
                         <a class="collapse-item" href="tbl_kategori.php">Kategori Buku</a>
@@ -98,7 +103,8 @@ session_start();
 
             <!-- Nav Item - Transaksi Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Transaksi</span>
                 </a>
@@ -160,12 +166,15 @@ session_start();
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
                                 <img class="img-profile rounded-circle" src="img/<?php echo $_SESSION['foto']; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="profil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -224,19 +233,24 @@ session_start();
                                         $sql = "SELECT * FROM buku ORDER BY id_buku DESC";
                                         $result = mysqli_query($koneksi, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) { ?>
-                                            <tr>
-                                                <td><?php echo $row['id_buku']; ?></td>
-                                                <td><?php echo $row['nama']; ?></td>
-                                                <td><?php echo $row['penerbit']; ?></td>
-                                                <td><?php echo $row['pengarang']; ?></td>
-                                                <td><?php echo $row['tahun_terbit']; ?></td>
-                                                <td><?php echo $row['jumlah_buku']; ?></td>
-                                                <td>
-                                                    <a href="update_buku.php?id=<?php echo $row['id_buku']; ?>" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-                                                    <a href="hapus_buku.php?id_buku=<?php echo $row['id_buku']; ?>" class="btn btn-sm btn-danger" onclick='return confirm("Yakin Hapus Data?")'><i class="fas fa-trash-alt"></i></a>
-                                                    <a href="detail_buku.php?id=<?php echo $row['id_buku']; ?>" class="btn btn-sm btn-primary">Detail</a>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td><?php echo $row['id_buku']; ?></td>
+                                            <td><?php echo $row['nama']; ?></td>
+                                            <td><?php echo $row['penerbit']; ?></td>
+                                            <td><?php echo $row['pengarang']; ?></td>
+                                            <td><?php echo $row['tahun_terbit']; ?></td>
+                                            <td><?php echo $row['stok_buku']; ?></td>
+                                            <td>
+                                                <a href="update_buku.php?id=<?php echo $row['id_buku']; ?>"
+                                                    class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                                <a href="hapus_buku.php?id_buku=<?php echo $row['id_buku']; ?>"
+                                                    class="btn btn-sm btn-danger"
+                                                    onclick='return confirm("Yakin Hapus Data?")'><i
+                                                        class="fas fa-trash-alt"></i></a>
+                                                <a href="detail_buku.php?id=<?php echo $row['id_buku']; ?>"
+                                                    class="btn btn-sm btn-primary">Detail</a>
+                                            </td>
+                                        </tr>
 
                                         <?php } ?>
 

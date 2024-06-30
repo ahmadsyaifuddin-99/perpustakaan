@@ -24,7 +24,9 @@ $row = mysqli_fetch_assoc($result)
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -72,7 +74,8 @@ $row = mysqli_fetch_assoc($result)
 
             <!-- Nav Item - Data Anggota Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Data Anggota</span>
                 </a>
@@ -86,11 +89,13 @@ $row = mysqli_fetch_assoc($result)
 
             <!-- Nav Item - Data Buku Menu -->
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Data Buku</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item active" href="tbl_buku.php">Daftar Buku</a>
                         <a class="collapse-item" href="tbl_kategori.php">Kategori Buku</a>
@@ -101,7 +106,8 @@ $row = mysqli_fetch_assoc($result)
 
             <!-- Nav Item - Transaksi Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Transaksi</span>
                 </a>
@@ -163,12 +169,15 @@ $row = mysqli_fetch_assoc($result)
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
                                 <img class="img-profile rounded-circle" src="img/<?php echo $_SESSION['foto']; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="profil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -205,21 +214,25 @@ $row = mysqli_fetch_assoc($result)
                                         <div class="form-group row">
                                             <div class="col-sm-6">
                                                 <label>ID Buku</label>
-                                                <input type="text" name="id_buku" class="form-control" value="<?php echo $row['id_buku']; ?>">
+                                                <input type="text" name="id_buku" class="form-control"
+                                                    value="<?php echo $row['id_buku']; ?>">
                                             </div>
                                             <div class="col-sm-6">
                                                 <label>Nama Buku</label>
-                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">
+                                                <input type="text" name="nama" class="form-control"
+                                                    value="<?php echo $row['nama']; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
                                                 <label>Penerbit</label>
-                                                <input type="text" name="penerbit" class="form-control" value="<?php echo $row['penerbit']; ?>">
+                                                <input type="text" name="penerbit" class="form-control"
+                                                    value="<?php echo $row['penerbit']; ?>">
                                             </div>
                                             <div class="col-sm-6">
                                                 <label>Pengarang</label>
-                                                <input type="text" name="pengarang" class="form-control" value="<?php echo $row['pengarang']; ?>">
+                                                <input type="text" name="pengarang" class="form-control"
+                                                    value="<?php echo $row['pengarang']; ?>">
                                             </div>
                                         </div>
 
@@ -227,21 +240,25 @@ $row = mysqli_fetch_assoc($result)
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <label>Tahun Terbit</label>
-                                                <input type="text" name="tahun_terbit" class="form-control" value="<?php echo $row['tahun_terbit']; ?>">
+                                                <input type="text" name="tahun_terbit" class="form-control"
+                                                    value="<?php echo $row['tahun_terbit']; ?>">
                                             </div>
                                             <div class="col-sm-6">
                                                 <label>Tanggal Masuk</label>
-                                                <input type="date" name="tanggal_masuk" class="form-control" value="<?php echo $row['tanggal_masuk']; ?>">
+                                                <input type="date" name="tanggal_masuk" class="form-control"
+                                                    value="<?php echo $row['tanggal_masuk']; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
                                                 <label>Jumlah Buku</label>
-                                                <input type="text" name="jumlah_buku" class="form-control" value="<?php echo $row['jumlah_buku']; ?>">
+                                                <input type="number" name="stok_buku" class="form-control"
+                                                    value="<?php echo $row['stok_buku']; ?>">
                                             </div>
                                             <div class="col-sm-6">
                                                 <label>Kategori</label>
-                                                <select class="form-control select2" required="required" name="id_kategori">
+                                                <select class="form-control select2" required="required"
+                                                    name="id_kategori">
                                                     <option disabled selected value> -- Pilih Kategori -- </option>
                                                     <?php
 
