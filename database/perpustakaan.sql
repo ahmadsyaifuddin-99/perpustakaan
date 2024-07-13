@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 07, 2021 at 04:47 AM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.19
+-- Host: localhost:3306
+-- Generation Time: Jul 06, 2024 at 07:45 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -34,8 +35,7 @@ CREATE TABLE `buku` (
   `penerbit` varchar(100) NOT NULL,
   `pengarang` varchar(100) NOT NULL,
   `tahun_terbit` varchar(100) NOT NULL,
-  `stok_buku` int(11) NOT NULL,
-  `jumlah_buku` varchar(100) NOT NULL,
+  `stok_buku` int NOT NULL,
   `tanggal_masuk` date NOT NULL,
   `sampul` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -44,12 +44,12 @@ CREATE TABLE `buku` (
 -- Dumping data for table `buku`
 --
 
-INSERT INTO `buku` (`id_buku`, `id_kategori`, `id_rak`, `nama`, `penerbit`, `pengarang`, `tahun_terbit`, `stok_buku`, `jumlah_buku`, `tanggal_masuk`, `sampul`) VALUES
-('132-133-123-31', 'Pemrograman Visual', ' Rak : 4', 'Web', 'Alvin', 'Jogja', '2013', 21, '21', '2021-07-01', ''),
-('132-133-123-38', 'Sains', 'Rak : 1', 'Reaksi  Kimia', 'Ahmad M', 'Jogja', '2018', 6, '6', '2021-07-27', ''),
-('132-133-123-45', 'Sains', 'Rak : 4', 'Karya Ilmiah', 'Tarmadji', 'Madiun', '2012', 21, '30', '2021-08-01', ''),
-('132-133-123-49', 'Bahasa', 'Rak : 1', 'Sejarah Indonesia', 'Pr. Darminta', 'Surabaya', '2012', 0, '10', '2021-08-05', ''),
-('132-133-123-90', 'Pemrograman Visual', 'Rak : 4', 'Database', 'Sudarman', 'Bandung Book', '2013', 21, '21', '2021-07-01', '');
+INSERT INTO `buku` (`id_buku`, `id_kategori`, `id_rak`, `nama`, `penerbit`, `pengarang`, `tahun_terbit`, `stok_buku`, `tanggal_masuk`, `sampul`) VALUES
+('132-133-123-31', 'Pemrograman Web', 'Rak : 4', 'Web', 'Alvin', 'Jogja', '2013', 21, '2021-07-01', ''),
+('132-133-123-38', 'Sains', 'Rak : 1', 'Reaksi  Kimia', 'Ahmad M', 'Jogja', '2018', 6, '2021-07-27', ''),
+('132-133-123-45', 'Sains', 'Rak : 4', 'Karya Ilmiah', 'Tarmadji', 'Madiun', '2012', 21, '2021-08-01', ''),
+('132-133-123-49', 'Bahasa', 'Rak : 1', 'Sejarah Indonesia', 'Pr. Darminta', 'Surabaya', '2012', 0, '2021-08-05', ''),
+('132-133-123-90', 'Pemrograman Visual', 'Rak : 4', 'Database', 'Sudarman', 'Bandung Book', '2013', 21, '2021-07-01', '');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,8 @@ INSERT INTO `kategori` (`id_kategori`, `kategori_buku`) VALUES
 ('A12', 'Matematika'),
 ('A13', 'Bahasa Inggris'),
 ('A14', 'Bahasa'),
-('A15', 'Pemrograman Visual');
+('TI1', 'Pemrograman Web'),
+('TI2', 'Pemrograman Visual');
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,7 @@ CREATE TABLE `pinjam_buku` (
   `tanggal_pinjam` date NOT NULL,
   `tanggal_kembali` date NOT NULL,
   `nama_buku` varchar(100) NOT NULL,
-  `jumlah_buku` int(11) NOT NULL,
+  `jumlah_buku` int NOT NULL,
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -144,7 +145,8 @@ INSERT INTO `pinjam_buku` (`id_pinjam`, `nama`, `tanggal_pinjam`, `tanggal_kemba
 ('A11', 'Eviana', '2021-07-01', '2021-07-07', 'Sastra Bahasa', 1, 'kembali'),
 ('A12', 'Ahmad', '2021-07-02', '2021-07-05', 'CI', 3, 'kembali'),
 ('A13', 'Muslim', '2021-07-02', '2021-07-09', 'MTK', 2, 'kembali'),
-('A22', 'Ahmad Muslim', '2021-08-11', '2021-08-12', 'Reaksi  Kimia', 1, 'kembali');
+('A22', 'Ahmad Muslim', '2021-08-11', '2021-08-12', 'Reaksi  Kimia', 1, 'kembali'),
+('PJ1', 'Asai', '2024-06-30', '2024-07-04', 'Web', 1, 'Pinjam');
 
 -- --------------------------------------------------------
 
@@ -216,7 +218,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `email`, `password`, `foto`, `tempat_lahir`, `tanggal_lahir`, `alamat_domisili`, `jenis_kelamin`, `nomor_hp`) VALUES
 ('E020318001', 'M Alfaritz', 'alfaritz01@gmail.com', 'alfaritz', 'insta-icon.png', 'Banjarbaru', '1999-08-01', 'Banjarmasin', 'Laki - Laki', '085753442649'),
-('E020318002', 'Ahmad Muslim', 'muslim.anshori@gmail.com', 'muslim123', 'Ahmad Muslim.jpg', 'Banjarmasin', '2000-03-02', 'Banjarmasin', 'Laki - Laki', '085753442746');
+('E020318002', 'Admin Perpustakaan', 'admin@gmail.com', 'admin1234', '', 'Banjarmasin', '2024-07-06', 'Banjarmasin', 'Laki - Laki', '085753442746'),
+('E020318003', 'Ahmad Syaifuddin', 'asai@gmail.com', 'asai1234', 'Photoleap_28_10_2023_11_51_55_5GWjx.jpg', 'Bumi', '2004-06-09', 'Indonesia', 'Laki - Laki', '085849910396'),
+('E020318004', 'Delta', 'delta@gmail.com', 'delta123', '', 'USA, California', '2024-07-06', '123 Street Wall', 'Perempuan', '1230989323');
 
 --
 -- Indexes for dumped tables
@@ -269,6 +273,7 @@ ALTER TABLE `siswa`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
